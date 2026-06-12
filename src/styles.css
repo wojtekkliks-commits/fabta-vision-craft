@@ -19,21 +19,25 @@
   --color-card-foreground: var(--card-foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-bar: var(--bar);
+  --color-bar-foreground: var(--bar-foreground);
 }
 
 :root {
-  /* Warm off-white / cream */
-  --background: oklch(0.972 0.008 85);
-  --foreground: oklch(0.22 0.012 60);
-  --muted: oklch(0.93 0.012 80);
-  --muted-foreground: oklch(0.48 0.012 65);
-  --accent: oklch(0.62 0.045 80); /* warm beige / olive */
-  --accent-foreground: oklch(0.98 0.005 85);
-  --border: oklch(0.86 0.012 75);
-  --card: oklch(0.95 0.01 82);
-  --card-foreground: oklch(0.22 0.012 60);
-  --primary: oklch(0.22 0.012 60);
-  --primary-foreground: oklch(0.97 0.008 85);
+  /* Senab-inspired palette */
+  --background: oklch(0.92 0.004 180);          /* light cool gray for sections */
+  --foreground: oklch(0.28 0.015 220);          /* deep slate */
+  --bar: oklch(0.93 0.004 180);                 /* sticky header bar */
+  --bar-foreground: oklch(0.32 0.015 220);
+  --accent: oklch(0.68 0.22 42);                /* vivid orange */
+  --accent-foreground: oklch(0.98 0.005 85);    /* near-white */
+  --muted: oklch(0.88 0.005 180);
+  --muted-foreground: oklch(0.45 0.015 220);
+  --border: oklch(0.82 0.008 200);
+  --card: oklch(0.95 0.004 180);
+  --card-foreground: oklch(0.28 0.015 220);
+  --primary: oklch(0.28 0.015 220);
+  --primary-foreground: oklch(0.98 0.005 85);
 }
 
 @layer base {
@@ -49,15 +53,14 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
-    font-feature-settings: "ss01", "cv11";
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
 
   h1, h2, h3, h4 {
     font-family: var(--font-serif);
-    font-weight: 400;
-    letter-spacing: -0.015em;
+    font-weight: 500;
+    letter-spacing: -0.02em;
   }
 }
 
@@ -72,9 +75,14 @@
 
 @utility tile-hover {
   & img {
-    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
   &:hover img {
-    transform: scale(1.04);
+    transform: scale(1.05);
   }
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar { display: none; }
 }
