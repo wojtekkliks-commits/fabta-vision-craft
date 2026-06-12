@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useRef, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 
 import hero from "@/assets/hero.jpg";
 import detailFabric from "@/assets/detail-fabric.jpg";
@@ -14,17 +14,17 @@ import aboutImg from "@/assets/about.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "FABTA — Kontraktowy producent mebli tapicerowanych i biurowych" },
+      { title: "FABTA — Meble, które robią różnicę" },
       {
         name: "description",
         content:
-          "FABTA (Fabryka Tapicerki) realizuje meble tapicerowane i biurowe pod marką klienta — od pojedynczych egzemplarzy po produkcję seryjną.",
+          "FABTA (Fabryka Tapicerki) to kontraktowy producent mebli tapicerowanych i biurowych. Realizujemy gotowe produkty z wizualizacji klienta, pod jego marką.",
       },
-      { property: "og:title", content: "FABTA — Zamieniamy wizualizacje w gotowe meble" },
+      { property: "og:title", content: "FABTA — Meble, które robią różnicę" },
       {
         property: "og:description",
         content:
-          "Kontraktowy producent mebli tapicerowanych i biurowych. Tapicerka i stolarnia pod jednym dachem, okolice Leszna.",
+          "Kontraktowy producent mebli tapicerowanych i biurowych. Tapicerka i stolarnia pod jednym dachem.",
       },
       { property: "og:image", content: hero },
       { name: "twitter:image", content: hero },
@@ -66,12 +66,51 @@ function Index() {
       <Header />
       <main>
         <Hero />
-        <WhatWeDo />
-        <HowWeWork />
         <Projects />
+        <Feature
+          image={workCarpentry}
+          eyebrow="Stolarnia i tapicernia"
+          title={
+            <>
+              <em className="italic">Pod jednym dachem</em>
+            </>
+          }
+          body={
+            <>
+              Od 2018 roku rozwijamy własną metodę pracy: wszystko, od stelaża po
+              ostatni szew, powstaje u nas w fabryce pod Lesznem. Dzięki temu mamy
+              pełną kontrolę nad jakością, terminem i kosztem każdej realizacji.
+              <br />
+              <br />
+              Realizujemy produkcję jednostkową, małoseryjną i seryjną — pod marką
+              klienta, z jego wizualizacji.
+            </>
+          }
+          cta={{ label: "Poznaj proces", href: "#proces" }}
+        />
+        <Feature
+          image={aboutImg}
+          eyebrow="Doświadczenie w każdym projekcie"
+          title={
+            <>
+              <em className="italic">Robimy to, co lubimy</em>
+            </>
+          }
+          body={
+            <>
+              Zespół 15 osób, własna stolarnia, własna tapicernia, własne biuro
+              techniczne. Zależy nam, żeby nasze meble dobrze służyły i dobrze
+              wyglądały — i żeby klient był z nich naprawdę zadowolony.
+              <br />
+              <br />
+              To, co zrobiliśmy przez te lata, kształtuje sposób, w jaki podchodzimy
+              do każdego nowego projektu.
+            </>
+          }
+          cta={{ label: "O nas", href: "#o-nas" }}
+        />
+        <Process />
         <ForWhom />
-        <Differentiators />
-        <About />
         <Contact />
       </main>
       <Footer />
@@ -84,42 +123,79 @@ function Index() {
 const NAV = [
   { href: "#co-robimy", label: "Co robimy" },
   { href: "#realizacje", label: "Realizacje" },
+  { href: "#proces", label: "Proces" },
   { href: "#dla-kogo", label: "Dla kogo" },
   { href: "#o-nas", label: "O nas" },
+  { href: "#kontakt", label: "Kontakt" },
 ];
 
 function Header() {
+  const [open, setOpen] = useState(false);
   return (
-    <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/60">
-      <div className="mx-auto max-w-[1600px] px-6 lg:px-12 h-16 md:h-20 flex items-center justify-between">
-        <a href="#top" className="font-serif text-2xl tracking-tight">
-          FABTA
-        </a>
-        <nav className="hidden md:flex items-center gap-10 text-sm">
-          {NAV.map((n) => (
-            <a
-              key={n.href}
-              href={n.href}
-              className="text-foreground/70 hover:text-foreground transition-colors"
-            >
-              {n.label}
-            </a>
-          ))}
-          <a
-            href="#kontakt"
-            className="inline-flex items-center border border-foreground/80 px-5 py-2 text-foreground hover:bg-foreground hover:text-background transition-colors"
+    <>
+      <header className="sticky top-0 z-50 bg-[var(--bar)] text-[var(--bar-foreground)]">
+        <div className="relative h-28 md:h-36 flex items-center justify-center px-6">
+          {/* Orange round search button */}
+          <button
+            aria-label="Szukaj"
+            className="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 size-12 md:size-14 rounded-full bg-accent text-accent-foreground grid place-items-center hover:scale-105 transition-transform"
           >
-            Kontakt
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
+              <circle cx="11" cy="11" r="7" />
+              <line x1="20" y1="20" x2="16.5" y2="16.5" />
+            </svg>
+          </button>
+
+          {/* Centered wordmark */}
+          <a
+            href="#top"
+            className="font-serif text-3xl md:text-5xl tracking-[0.18em] font-medium select-none"
+          >
+            FABTA
           </a>
+
+          {/* Hamburger */}
+          <button
+            aria-label="Menu"
+            onClick={() => setOpen((o) => !o)}
+            className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 size-12 grid place-items-center"
+          >
+            <span className="flex flex-col gap-[5px]">
+              <span className="block w-7 h-px bg-current" />
+              <span className="block w-7 h-px bg-current" />
+              <span className="block w-7 h-px bg-current" />
+            </span>
+          </button>
+        </div>
+      </header>
+
+      {/* Slide-down menu */}
+      <div
+        className={`fixed inset-x-0 top-28 md:top-36 z-40 bg-[var(--bar)] border-t border-border overflow-hidden transition-[max-height] duration-500 ${
+          open ? "max-h-[80vh]" : "max-h-0"
+        }`}
+      >
+        <nav className="px-6 md:px-12 py-10 md:py-16 max-w-[1600px] mx-auto">
+          <ul className="space-y-5 md:space-y-7">
+            {NAV.map((n) => (
+              <li key={n.href}>
+                <a
+                  href={n.href}
+                  onClick={() => setOpen(false)}
+                  className="font-serif text-4xl md:text-7xl leading-none hover:text-accent transition-colors block"
+                >
+                  {n.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-12 flex gap-6 text-xs tracking-[0.25em] uppercase text-muted-foreground">
+            <span className="border-b border-current pb-1">PL</span>
+            <span>info@fabta.pl</span>
+          </div>
         </nav>
-        <a
-          href="#kontakt"
-          className="md:hidden text-sm border border-foreground/80 px-4 py-1.5"
-        >
-          Kontakt
-        </a>
       </div>
-    </header>
+    </>
   );
 }
 
@@ -127,153 +203,221 @@ function Header() {
 
 function Hero() {
   return (
-    <section id="top" className="relative">
-      <div className="mx-auto max-w-[1600px] px-6 lg:px-12 pt-16 md:pt-24 pb-10">
-        <p className="text-xs tracking-[0.25em] uppercase text-muted-foreground mb-8">
-          Fabryka Tapicerki · est. 2018
-        </p>
-        <h1 className="font-serif text-[2.75rem] leading-[1.05] sm:text-6xl md:text-7xl lg:text-[6.5rem] max-w-5xl">
-          Zamieniamy wizualizacje <br className="hidden md:block" />
-          w <em className="italic font-light">gotowe meble.</em>
+    <section
+      id="top"
+      className="relative bg-accent text-accent-foreground overflow-hidden"
+    >
+      <div className="relative mx-auto max-w-[1700px] px-6 md:px-12 pt-20 md:pt-32 pb-20 md:pb-32 min-h-[80vh] flex flex-col justify-center">
+        <h1 className="font-serif font-medium text-center leading-[0.95] text-[clamp(3.5rem,11vw,12rem)] tracking-[-0.03em]">
+          <span className="block">Meble, które</span>
+          <span className="block italic font-normal">robią różnicę</span>
         </h1>
-        <div className="mt-10 grid md:grid-cols-[1fr_minmax(0,420px)] gap-10 items-end">
-          <div />
-          <div>
-            <p className="text-base md:text-lg leading-relaxed text-foreground/80">
-              FABTA to kontraktowy producent mebli tapicerowanych i biurowych.
-              Realizujemy gotowe produkty z wizualizacji klienta, pod jego marką —
-              od pojedynczych egzemplarzy po produkcję seryjną.
+
+        <div className="mt-16 md:mt-24 grid md:grid-cols-12 gap-8">
+          <div className="md:col-start-7 md:col-span-6 max-w-xl">
+            <p className="text-lg md:text-xl leading-relaxed">
+              Tworzymy meble, które wspierają ludzi w ich codziennej pracy. To
+              nasza obietnica i nasza siła — wytwarzać produkty, które łączą
+              komfort, jakość i ponadczasową formę.
+            </p>
+            <p className="text-base md:text-lg leading-relaxed mt-6 opacity-90">
+              Jako kontraktowy producent mebli tapicerowanych i biurowych
+              realizujemy gotowe produkty z wizualizacji klienta — pod jego marką,
+              od pojedynczych egzemplarzy po produkcję seryjną. Łączymy własną
+              tapicernię i stolarnię z otwartą współpracą z projektantami,
+              architektami i markami.
             </p>
             <a
-              href="mailto:info@fabta.pl"
-              className="mt-8 inline-flex items-center group text-sm tracking-wide uppercase border-b border-foreground pb-1"
+              href="#kontakt"
+              className="mt-10 inline-flex items-center group text-sm tracking-[0.25em] uppercase border-b border-accent-foreground pb-1"
             >
-              Zapytaj o współpracę
+              Porozmawiajmy
               <span className="ml-3 transition-transform group-hover:translate-x-1">→</span>
             </a>
           </div>
         </div>
       </div>
-      <div className="px-6 lg:px-12 mx-auto max-w-[1600px]">
-        <div className="relative overflow-hidden aspect-[16/9] md:aspect-[21/9] bg-muted">
-          <img
-            src={hero}
-            alt="Sofa tapicerowana z dębową konstrukcją w jasnym, skandynawskim wnętrzu"
-            width={1920}
-            height={1080}
-            className="h-full w-full object-cover"
-          />
+    </section>
+  );
+}
+
+/* ---------- Projects carousel ---------- */
+
+const PROJECTS = [
+  { img: hero, name: "Sofa Lounge", tag: "Wnętrza biurowe" },
+  { img: workAcoustic, name: "Panele akustyczne", tag: "Open space" },
+  { img: projectSofa, name: "Sofa modułowa", tag: "Showroom marki" },
+  { img: projectScreens, name: "Ekrany biurowe", tag: "Strefa pracy" },
+  { img: projectPlanter, name: "Donice tapicerowane", tag: "Recepcja" },
+  { img: projectPoufs, name: "Pufy Gallery", tag: "Strefa wspólna" },
+  { img: detailFabric, name: "Detal tapicerki", tag: "Wykończenie" },
+];
+
+function Projects() {
+  const [idx, setIdx] = useState(0);
+  const scrollerRef = useRef<HTMLDivElement>(null);
+
+  const scrollTo = (i: number) => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    const child = el.children[i] as HTMLElement | undefined;
+    if (!child) return;
+    el.scrollTo({ left: child.offsetLeft - 24, behavior: "smooth" });
+    setIdx(i);
+  };
+
+  return (
+    <section id="realizacje" className="bg-background py-20 md:py-28">
+      <div className="px-6 md:px-12 mx-auto max-w-[1700px] flex items-end justify-between mb-10">
+        <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground">
+          Wybrane realizacje
+        </p>
+        <div className="flex items-center gap-4 text-sm tracking-[0.2em] uppercase">
+          <button
+            onClick={() => scrollTo(Math.max(0, idx - 1))}
+            aria-label="Poprzedni"
+            className="size-10 rounded-full border border-foreground/40 grid place-items-center hover:bg-foreground hover:text-background transition-colors"
+          >
+            ←
+          </button>
+          <span className="tabular-nums text-muted-foreground">
+            {String(idx + 1).padStart(2, "0")} / {String(PROJECTS.length).padStart(2, "0")}
+          </span>
+          <button
+            onClick={() => scrollTo(Math.min(PROJECTS.length - 1, idx + 1))}
+            aria-label="Następny"
+            className="size-10 rounded-full border border-foreground/40 grid place-items-center hover:bg-foreground hover:text-background transition-colors"
+          >
+            →
+          </button>
         </div>
+      </div>
+
+      <div
+        ref={scrollerRef}
+        onScroll={(e) => {
+          const el = e.currentTarget;
+          const children = Array.from(el.children) as HTMLElement[];
+          const center = el.scrollLeft + el.clientWidth / 2;
+          let nearest = 0;
+          let best = Infinity;
+          children.forEach((c, i) => {
+            const d = Math.abs(c.offsetLeft + c.clientWidth / 2 - center);
+            if (d < best) { best = d; nearest = i; }
+          });
+          setIdx(nearest);
+        }}
+        className="flex gap-4 md:gap-6 overflow-x-auto snap-x snap-mandatory no-scrollbar px-6 md:px-12 pb-4"
+      >
+        {PROJECTS.map((p, i) => (
+          <article
+            key={i}
+            className="snap-start shrink-0 w-[85vw] sm:w-[60vw] md:w-[70vw] lg:w-[58vw] xl:w-[52vw]"
+          >
+            <div className="relative overflow-hidden aspect-[16/10] bg-muted tile-hover">
+              <img
+                src={p.img}
+                alt={p.name}
+                loading={i < 2 ? "eager" : "lazy"}
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <div className="flex items-baseline justify-between mt-5">
+              <h3 className="font-serif text-3xl md:text-4xl">{p.name}</h3>
+              <a
+                href="#kontakt"
+                className="text-xs tracking-[0.25em] uppercase border-b border-foreground/60 hover:border-foreground pb-0.5"
+              >
+                O projekcie →
+              </a>
+            </div>
+            <p className="text-sm text-muted-foreground mt-2">{p.tag}</p>
+          </article>
+        ))}
       </div>
     </section>
   );
 }
 
-/* ---------- What we do ---------- */
+/* ---------- Reusable image + text feature (Senab "Vi synar sömmarna" pattern) ---------- */
 
-function WhatWeDo() {
+function Feature({
+  image,
+  eyebrow,
+  title,
+  body,
+  cta,
+}: {
+  image: string;
+  eyebrow: string;
+  title: ReactNode;
+  body: ReactNode;
+  cta?: { label: string; href: string };
+}) {
   return (
-    <section id="co-robimy" className="py-28 md:py-40">
-      <div className="mx-auto max-w-[1600px] px-6 lg:px-12">
+    <section id="co-robimy" className="py-20 md:py-28">
+      <div className="mx-auto max-w-[1700px] px-6 md:px-12">
         <Reveal>
-          <div className="grid md:grid-cols-12 gap-8 mb-20">
-            <p className="md:col-span-3 text-xs tracking-[0.25em] uppercase text-muted-foreground">
-              01 — Co robimy
-            </p>
-            <h2 className="md:col-span-9 text-4xl md:text-6xl leading-[1.05]">
-              Dwa obszary, <em className="italic font-light">jedna pracownia.</em>
-              <span className="block text-foreground/60 mt-4 text-2xl md:text-3xl">
-                Realizujemy produkcję jednostkową, małoseryjną i seryjną.
-              </span>
-            </h2>
+          <div className="relative overflow-hidden aspect-[21/9] bg-muted">
+            <img
+              src={image}
+              alt=""
+              loading="lazy"
+              className="h-full w-full object-cover"
+            />
           </div>
         </Reveal>
 
-        <div className="grid md:grid-cols-2 gap-10 md:gap-16">
-          <Reveal>
-            <article>
-              <div className="relative overflow-hidden aspect-[4/3] bg-muted tile-hover">
-                <img
-                  src={workAcoustic}
-                  alt="Tapicerowane panele akustyczne w przestrzeni biurowej"
-                  loading="lazy"
-                  width={1600}
-                  height={1200}
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <h3 className="font-serif text-3xl md:text-4xl mt-8">
-                Produkcja mebli tapicerowanych i biurowych
-              </h3>
-              <p className="mt-5 text-foreground/75 leading-relaxed max-w-prose">
-                Wytwarzamy meble na zlecenie, pod marką klienta. Główny asortyment:
-                ekrany i panele akustyczne, tapicerowane donice biurowe, sofy i pufy.
+        <Reveal delay={150}>
+          <div className="grid md:grid-cols-12 gap-8 md:gap-12 mt-16 md:mt-24 max-w-[1300px] mx-auto">
+            <div className="md:col-span-12 text-center">
+              <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-8">
+                {eyebrow}
               </p>
-            </article>
-          </Reveal>
-
-          <Reveal delay={150}>
-            <article className="md:mt-24">
-              <div className="relative overflow-hidden aspect-[4/3] bg-muted tile-hover">
-                <img
-                  src={workCarpentry}
-                  alt="Stolarnia — drewniane ramy i stelaże mebli tapicerowanych"
-                  loading="lazy"
-                  width={1600}
-                  height={1200}
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <h3 className="font-serif text-3xl md:text-4xl mt-8">Stolarnia</h3>
-              <p className="mt-5 text-foreground/75 leading-relaxed max-w-prose">
-                Wykonujemy drewniane ramy i stelaże do mebli tapicerowanych. Własna
-                stolarnia daje nam kontrolę nad jakością i terminami na każdym etapie.
-              </p>
-            </article>
-          </Reveal>
-        </div>
+              <h2 className="font-serif font-medium text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.95] tracking-[-0.02em]">
+                {title}
+              </h2>
+            </div>
+            <div className="md:col-start-4 md:col-span-6 text-center md:text-left mt-6">
+              <p className="text-lg leading-relaxed text-foreground/85">{body}</p>
+              {cta && (
+                <div className="mt-8 text-center md:text-left">
+                  <a
+                    href={cta.href}
+                    className="inline-flex items-center text-xs tracking-[0.3em] uppercase border-b border-foreground/60 hover:border-foreground pb-1"
+                  >
+                    {cta.label} →
+                  </a>
+                </div>
+              )}
+            </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
 }
 
-/* ---------- How we work ---------- */
+/* ---------- Process ---------- */
 
 const STEPS = [
-  {
-    n: "01",
-    t: "Wizualizacja, wymiary lub pomysł",
-    d: "Otrzymujemy od klienta materiał wyjściowy — render, szkic, zdjęcie lub krótki opis.",
-  },
-  {
-    n: "02",
-    t: "Konsultacja i propozycje",
-    d: "Analizujemy projekt pod kątem wykonania i proponujemy rozwiązania konstrukcyjne i materiałowe.",
-  },
-  {
-    n: "03",
-    t: "Realizacja fizycznej wersji",
-    d: "Budujemy mebel u nas — od stelaża, przez tapicerkę, po wykończenie.",
-  },
-  {
-    n: "04",
-    t: "Dostawa",
-    d: "Dostarczamy gotowy produkt — jednostkowo, małoseryjnie lub seryjnie.",
-  },
+  { n: "01", t: "Wizualizacja, wymiary lub pomysł", d: "Wystarczy render, szkic, zdjęcie lub krótki opis. Od tego zaczynamy." },
+  { n: "02", t: "Konsultacja i propozycje", d: "Analizujemy projekt i proponujemy rozwiązania konstrukcyjne i materiałowe." },
+  { n: "03", t: "Realizacja", d: "Budujemy mebel u nas — stelaż, tapicerka, wykończenie. Wszystko w jednym miejscu." },
+  { n: "04", t: "Dostawa", d: "Jednostkowo, małoseryjnie lub seryjnie — pod marką klienta." },
 ];
 
-function HowWeWork() {
+function Process() {
   return (
-    <section className="py-28 md:py-40 bg-muted/50">
-      <div className="mx-auto max-w-[1600px] px-6 lg:px-12">
+    <section id="proces" className="py-20 md:py-32 bg-[var(--bar)]">
+      <div className="mx-auto max-w-[1700px] px-6 md:px-12">
         <Reveal>
-          <div className="grid md:grid-cols-12 gap-8 mb-20">
-            <p className="md:col-span-3 text-xs tracking-[0.25em] uppercase text-muted-foreground">
-              02 — Jak pracujemy
+          <div className="text-center max-w-4xl mx-auto mb-16 md:mb-24">
+            <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-8">
+              Jak pracujemy
             </p>
-            <h2 className="md:col-span-9 text-4xl md:text-6xl leading-[1.05] max-w-4xl">
-              Wystarczy zdjęcie, wymiary, pomysł lub wizualizacja —{" "}
-              <em className="italic font-light text-foreground/70">resztą zajmujemy się my.</em>
+            <h2 className="font-serif font-medium text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-[-0.02em]">
+              Od pomysłu do <em className="italic font-normal">gotowego mebla</em>
             </h2>
           </div>
         </Reveal>
@@ -281,10 +425,12 @@ function HowWeWork() {
         <ol className="grid md:grid-cols-4 gap-px bg-border">
           {STEPS.map((s, i) => (
             <Reveal key={s.n} delay={i * 100}>
-              <li className="bg-background p-8 md:p-10 h-full">
-                <div className="font-serif text-5xl md:text-6xl text-foreground/30">{s.n}</div>
-                <h3 className="font-serif text-2xl mt-8 leading-snug">{s.t}</h3>
-                <p className="mt-4 text-sm text-foreground/70 leading-relaxed">{s.d}</p>
+              <li className="bg-[var(--bar)] p-8 md:p-10 h-full border border-transparent">
+                <div className="font-serif text-6xl md:text-7xl text-accent leading-none">
+                  {s.n}
+                </div>
+                <h3 className="font-serif text-2xl md:text-3xl mt-8 leading-tight">{s.t}</h3>
+                <p className="mt-4 text-sm text-muted-foreground leading-relaxed">{s.d}</p>
               </li>
             </Reveal>
           ))}
@@ -294,208 +440,63 @@ function HowWeWork() {
   );
 }
 
-/* ---------- Projects ---------- */
-
-const PROJECTS = [
-  { img: projectSofa, name: "Sofa modułowa", tag: "Wnętrza biurowe", span: "md:col-span-8" },
-  { img: projectPlanter, name: "Donice tapicerowane", tag: "Open space", span: "md:col-span-4" },
-  { img: projectScreens, name: "Ekrany akustyczne", tag: "Strefa pracy", span: "md:col-span-4" },
-  { img: projectPoufs, name: "Pufy gallery", tag: "Strefa wspólna", span: "md:col-span-8" },
-  { img: detailFabric, name: "Detal tapicerki", tag: "Wykończenie", span: "md:col-span-6" },
-  { img: workAcoustic, name: "Panele wielkoformatowe", tag: "Akustyka", span: "md:col-span-6" },
-];
-
-function Projects() {
-  return (
-    <section id="realizacje" className="py-28 md:py-40">
-      <div className="mx-auto max-w-[1600px] px-6 lg:px-12">
-        <Reveal>
-          <div className="grid md:grid-cols-12 gap-8 mb-16">
-            <p className="md:col-span-3 text-xs tracking-[0.25em] uppercase text-muted-foreground">
-              03 — Realizacje
-            </p>
-            <h2 className="md:col-span-9 text-4xl md:text-6xl leading-[1.05]">
-              Wybrane projekty <em className="italic font-light text-foreground/70">i detale.</em>
-            </h2>
-          </div>
-        </Reveal>
-
-        <div className="grid md:grid-cols-12 gap-4 md:gap-6">
-          {PROJECTS.map((p, i) => (
-            <Reveal key={i} delay={(i % 2) * 120}>
-              <figure className={`${p.span} group`}>
-                <div className="relative overflow-hidden aspect-[4/3] bg-muted tile-hover">
-                  <img
-                    src={p.img}
-                    alt={p.name}
-                    loading="lazy"
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-                <figcaption className="mt-4 flex items-baseline justify-between">
-                  <span className="font-serif text-xl">{p.name}</span>
-                  <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                    {p.tag}
-                  </span>
-                </figcaption>
-              </figure>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 /* ---------- For whom ---------- */
 
 function ForWhom() {
   return (
-    <section id="dla-kogo" className="py-28 md:py-40 bg-muted/50">
-      <div className="mx-auto max-w-[1600px] px-6 lg:px-12">
+    <section id="dla-kogo" className="py-20 md:py-32 bg-background">
+      <div className="mx-auto max-w-[1700px] px-6 md:px-12">
         <Reveal>
-          <div className="grid md:grid-cols-12 gap-8 mb-20">
-            <p className="md:col-span-3 text-xs tracking-[0.25em] uppercase text-muted-foreground">
-              04 — Dla kogo
+          <div className="text-center max-w-4xl mx-auto mb-16 md:mb-20">
+            <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-8">
+              Dla kogo pracujemy
             </p>
-            <h2 className="md:col-span-9 text-4xl md:text-6xl leading-[1.05]">
-              Partner produkcyjny dla{" "}
-              <em className="italic font-light text-foreground/70">marek i projektantów.</em>
+            <h2 className="font-serif font-medium text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-[-0.02em]">
+              Partner dla marek, <em className="italic font-normal">które nie produkują same</em>
             </h2>
           </div>
         </Reveal>
 
-        <div className="grid md:grid-cols-2 gap-10 md:gap-20">
+        <div className="grid md:grid-cols-2 gap-12 md:gap-20 max-w-[1300px] mx-auto">
           <Reveal>
             <div className="border-t border-foreground/30 pt-8">
               <h3 className="font-serif text-3xl md:text-4xl">Marki bez własnej produkcji</h3>
-              <p className="mt-5 text-foreground/75 leading-relaxed max-w-prose">
+              <p className="mt-5 text-foreground/80 leading-relaxed">
                 Firmy z własnym brandem, które chcą zlecać wytwarzanie mebli na
-                zewnątrz i szukają rzetelnego, stabilnego dostawcy.
+                zewnątrz i szukają rzetelnego, stabilnego dostawcy. Pracujemy w
+                modelu white-label — na opakowaniu i metce widnieje Twoja marka.
               </p>
             </div>
           </Reveal>
           <Reveal delay={120}>
             <div className="border-t border-foreground/30 pt-8">
-              <h3 className="font-serif text-3xl md:text-4xl">Klienci ceniący jakość i cenę</h3>
-              <p className="mt-5 text-foreground/75 leading-relaxed max-w-prose">
-                Firmy wyposażające biura, dealerzy mebli i projektanci wnętrz, dla
-                których liczy się solidny, dobrze wykonany mebel w rozsądnej cenie.
+              <h3 className="font-serif text-3xl md:text-4xl">Architekci i projektanci wnętrz</h3>
+              <p className="mt-5 text-foreground/80 leading-relaxed">
+                Firmy wyposażające biura, dealerzy mebli i projektanci wnętrz,
+                dla których liczy się solidny, dobrze wykonany mebel w rozsądnej
+                cenie — i partner, który doradzi, a nie tylko wykona.
               </p>
             </div>
           </Reveal>
         </div>
-      </div>
-    </section>
-  );
-}
 
-/* ---------- Differentiators ---------- */
-
-const DIFFS = [
-  { t: "Terminowość i stabilność", d: "Dostawca, na którym można polegać." },
-  {
-    t: "Od wizualizacji do gotowego mebla",
-    d: "Przekładamy rendery i pomysły na realne produkty.",
-  },
-  {
-    t: "Tapicerka i stolarnia pod jednym dachem",
-    d: "Pełna kontrola nad jakością i terminami.",
-  },
-  {
-    t: "Elastyczność produkcji",
-    d: "Od pojedynczych egzemplarzy po serię, bez wygórowanych minimów.",
-  },
-  {
-    t: "Doradztwo techniczne",
-    d: "Proponujemy lepsze rozwiązania, nie tylko wykonujemy.",
-  },
-];
-
-function Differentiators() {
-  return (
-    <section className="py-28 md:py-40">
-      <div className="mx-auto max-w-[1600px] px-6 lg:px-12">
         <Reveal>
-          <div className="grid md:grid-cols-12 gap-8 mb-16">
-            <p className="md:col-span-3 text-xs tracking-[0.25em] uppercase text-muted-foreground">
-              05 — Co nas wyróżnia
-            </p>
-            <h2 className="md:col-span-9 text-4xl md:text-6xl leading-[1.05]">
-              Pięć powodów, <em className="italic font-light text-foreground/70">dla których wracają.</em>
-            </h2>
-          </div>
+          <ul className="mt-20 md:mt-28 grid sm:grid-cols-2 md:grid-cols-3 gap-px bg-border border border-border max-w-[1300px] mx-auto">
+            {[
+              ["Terminowość", "Dostawca, na którym można polegać."],
+              ["Od renderu do mebla", "Przekładamy wizualizacje na realne produkty."],
+              ["Wszystko u nas", "Tapicernia i stolarnia pod jednym dachem."],
+              ["Bez minimów", "Jednostkowo, małoseryjnie lub seryjnie."],
+              ["Doradztwo techniczne", "Proponujemy lepsze rozwiązania."],
+              ["Stabilność od 2018", "Zespół 15 osób, własna fabryka."],
+            ].map(([t, d]) => (
+              <li key={t} className="bg-background p-8">
+                <h4 className="font-serif text-2xl">{t}</h4>
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{d}</p>
+              </li>
+            ))}
+          </ul>
         </Reveal>
-
-        <dl className="divide-y divide-border border-y border-border">
-          {DIFFS.map((d, i) => (
-            <Reveal key={d.t} delay={i * 60}>
-              <div className="grid md:grid-cols-12 gap-6 py-8 md:py-10 items-baseline">
-                <dt className="md:col-span-1 text-sm text-muted-foreground tabular-nums">
-                  0{i + 1}
-                </dt>
-                <div className="md:col-span-7 font-serif text-2xl md:text-4xl leading-tight">
-                  {d.t}
-                </div>
-                <dd className="md:col-span-4 text-foreground/70 leading-relaxed">{d.d}</dd>
-              </div>
-            </Reveal>
-          ))}
-        </dl>
-      </div>
-    </section>
-  );
-}
-
-/* ---------- About ---------- */
-
-function About() {
-  return (
-    <section id="o-nas" className="py-28 md:py-40 bg-muted/50">
-      <div className="mx-auto max-w-[1600px] px-6 lg:px-12">
-        <div className="grid md:grid-cols-12 gap-10 md:gap-16 items-center">
-          <Reveal>
-            <div className="md:col-span-6 relative overflow-hidden aspect-[4/5] bg-muted">
-              <img
-                src={aboutImg}
-                alt="Zespół FABTA w stolarni"
-                loading="lazy"
-                width={1600}
-                height={2000}
-                className="h-full w-full object-cover"
-              />
-            </div>
-          </Reveal>
-          <Reveal delay={120}>
-            <div className="md:col-span-6">
-              <p className="text-xs tracking-[0.25em] uppercase text-muted-foreground mb-8">
-                06 — O nas
-              </p>
-              <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl leading-[1.05]">
-                Lubimy to, co robimy — i robimy to <em className="italic font-light">rzetelnie.</em>
-              </h2>
-              <p className="mt-8 text-lg text-foreground/80 leading-relaxed max-w-prose">
-                Zależy nam, żeby nasze meble dobrze służyły i dobrze wyglądały — i żeby
-                klient był z nich naprawdę zadowolony. Lubimy projektowanie i przekuwanie
-                wizualizacji w gotowe produkty.
-              </p>
-              <dl className="mt-12 grid grid-cols-3 gap-6 border-t border-foreground/20 pt-8">
-                <div>
-                  <dt className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Od</dt>
-                  <dd className="font-serif text-3xl mt-2">2018</dd>
-                </div>
-                <div>
-                  <dt className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Zespół</dt>
-                  <dd className="font-serif text-3xl mt-2">15 osób</dd>
-                </div>
-                <div>
-                  <dt className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Lokalizacja</dt>
-                  <dd className="font-serif text-2xl mt-2">okol. Leszna</dd>
-                </div>
-              </dl>
-            </div>
-          </Reveal>
-        </div>
       </div>
     </section>
   );
@@ -505,31 +506,36 @@ function About() {
 
 function Contact() {
   return (
-    <section id="kontakt" className="py-28 md:py-40">
-      <div className="mx-auto max-w-[1600px] px-6 lg:px-12">
+    <section id="kontakt" className="bg-accent text-accent-foreground py-24 md:py-40">
+      <div className="mx-auto max-w-[1700px] px-6 md:px-12">
         <Reveal>
-          <h2 className="font-serif text-5xl sm:text-6xl md:text-8xl lg:text-9xl leading-[0.95] max-w-5xl">
-            Porozmawiajmy <br />o Twoim <em className="italic font-light">projekcie.</em>
+          <h2
+            id="o-nas"
+            className="font-serif font-medium text-center text-[clamp(3rem,10vw,10rem)] leading-[0.95] tracking-[-0.03em]"
+          >
+            <span className="block">Porozmawiajmy</span>
+            <span className="block italic font-normal">o Twoim projekcie</span>
           </h2>
         </Reveal>
 
-        <div className="mt-16 grid md:grid-cols-12 gap-10">
+        <div className="mt-16 md:mt-24 grid md:grid-cols-12 gap-10 md:gap-16 max-w-[1300px] mx-auto">
           <Reveal>
             <div className="md:col-span-5">
-              <p className="text-xs tracking-[0.25em] uppercase text-muted-foreground">Kontakt</p>
+              <p className="text-xs tracking-[0.3em] uppercase opacity-80">Napisz</p>
               <a
                 href="mailto:info@fabta.pl"
-                className="block mt-4 font-serif text-3xl md:text-4xl border-b border-foreground/40 pb-2 hover:border-foreground transition-colors"
+                className="block mt-4 font-serif text-4xl md:text-5xl border-b border-accent-foreground/60 hover:border-accent-foreground pb-2"
               >
                 info@fabta.pl
               </a>
-              <p className="mt-10 text-sm text-foreground/70 leading-relaxed max-w-sm">
+              <p className="mt-10 text-base leading-relaxed opacity-90 max-w-sm">
                 Odpowiadamy zwykle w ciągu jednego dnia roboczego. Najlepiej dołącz
                 wizualizację, wymiary lub krótki opis projektu.
               </p>
-              <div className="mt-10 text-sm text-foreground/70 space-y-1">
+              <div className="mt-10 text-sm space-y-1 opacity-90">
                 <p>FABTA · Fabryka Tapicerki</p>
                 <p>okolice Leszna, Wielkopolska</p>
+                <p>na rynku od 2018 · zespół 15 osób</p>
               </div>
             </div>
           </Reveal>
@@ -547,19 +553,17 @@ function Contact() {
                 window.location.href = `mailto:info@fabta.pl?subject=Zapytanie%20ofertowe&body=${encodeURIComponent(body)}`;
               }}
             >
-              <Field name="name" label="Imię" required />
-              <Field name="company" label="Firma" />
-              <Field name="email" label="E-mail" type="email" required className="sm:col-span-2" />
-              <Field name="message" label="Opis projektu" textarea required className="sm:col-span-2" />
+              <ContactField name="name" label="Imię" required />
+              <ContactField name="company" label="Firma" />
+              <ContactField name="email" label="E-mail" type="email" required className="sm:col-span-2" />
+              <ContactField name="message" label="Opis projektu" textarea required className="sm:col-span-2" />
               <div className="sm:col-span-2 flex items-center justify-between pt-2">
-                <p className="text-xs text-muted-foreground">
-                  Wizualizację możesz dosłać w odpowiedzi na maila.
-                </p>
+                <p className="text-xs opacity-80">Wizualizację możesz dosłać mailem.</p>
                 <button
                   type="submit"
-                  className="inline-flex items-center text-sm uppercase tracking-wide border border-foreground px-6 py-3 hover:bg-foreground hover:text-background transition-colors"
+                  className="inline-flex items-center text-sm uppercase tracking-[0.2em] border border-accent-foreground px-6 py-3 hover:bg-accent-foreground hover:text-accent transition-colors"
                 >
-                  Wyślij zapytanie
+                  Wyślij zapytanie →
                 </button>
               </div>
             </form>
@@ -570,7 +574,7 @@ function Contact() {
   );
 }
 
-function Field({
+function ContactField({
   name,
   label,
   type = "text",
@@ -586,10 +590,10 @@ function Field({
   className?: string;
 }) {
   const base =
-    "w-full bg-transparent border-b border-foreground/30 focus:border-foreground outline-none py-3 text-foreground placeholder:text-foreground/40 transition-colors";
+    "w-full bg-transparent border-b border-accent-foreground/40 focus:border-accent-foreground outline-none py-3 text-accent-foreground placeholder:text-accent-foreground/50 transition-colors";
   return (
     <label className={`block ${className}`}>
-      <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+      <span className="text-xs uppercase tracking-[0.25em] opacity-80">
         {label}
         {required && " *"}
       </span>
@@ -606,29 +610,28 @@ function Field({
 
 function Footer() {
   return (
-    <footer className="border-t border-border py-12 md:py-16">
-      <div className="mx-auto max-w-[1600px] px-6 lg:px-12 grid md:grid-cols-12 gap-8 items-end">
+    <footer className="bg-[var(--bar)] py-16 md:py-20">
+      <div className="mx-auto max-w-[1700px] px-6 md:px-12 grid md:grid-cols-12 gap-8 items-end">
         <div className="md:col-span-4">
-          <p className="font-serif text-2xl">FABTA</p>
-          <p className="text-xs text-muted-foreground mt-2">Fabryka Tapicerki · od 2018</p>
+          <p className="font-serif text-3xl tracking-[0.18em]">FABTA</p>
+          <p className="text-xs text-muted-foreground mt-3">
+            Fabryka Tapicerki · od 2018
+          </p>
         </div>
-        <div className="md:col-span-4 text-sm text-foreground/70">
-          <a href="mailto:info@fabta.pl" className="hover:text-foreground">
+        <div className="md:col-span-4 text-sm text-foreground/75 space-y-1">
+          <a href="mailto:info@fabta.pl" className="hover:text-foreground block">
             info@fabta.pl
           </a>
-          <p className="mt-1">okolice Leszna, Wielkopolska</p>
+          <p>okolice Leszna, Wielkopolska</p>
         </div>
-        <nav className="md:col-span-4 flex flex-wrap md:justify-end gap-x-6 gap-y-2 text-sm text-foreground/70">
+        <nav className="md:col-span-4 flex flex-wrap md:justify-end gap-x-6 gap-y-2 text-sm text-foreground/75">
           {NAV.map((n) => (
             <a key={n.href} href={n.href} className="hover:text-foreground">
               {n.label}
             </a>
           ))}
-          <a href="#kontakt" className="hover:text-foreground">
-            Kontakt
-          </a>
         </nav>
-        <p className="md:col-span-12 text-xs text-muted-foreground pt-8 border-t border-border">
+        <p className="md:col-span-12 text-xs text-muted-foreground pt-10 border-t border-border">
           © {new Date().getFullYear()} FABTA. Wszelkie prawa zastrzeżone.
         </p>
       </div>
