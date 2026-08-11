@@ -69,6 +69,7 @@ function Index() {
         <Projects />
         <Feature
           image={workCarpentry}
+          narrowImage
           eyebrow="Stolarnia i tapicernia"
           title={
             <>
@@ -343,12 +344,14 @@ function Projects() {
 
 function Feature({
   image,
+  narrowImage,
   eyebrow,
   title,
   body,
   cta,
 }: {
   image: string;
+  narrowImage?: boolean;
   eyebrow: string;
   title: ReactNode;
   body: ReactNode;
@@ -358,7 +361,7 @@ function Feature({
     <section id="co-robimy" className="py-20 md:py-28">
       <div className="mx-auto max-w-[1700px] px-6 md:px-12">
         <Reveal>
-          <div className="relative overflow-hidden aspect-[21/9] bg-muted">
+          <div className={`relative overflow-hidden aspect-[21/9] bg-muted ${narrowImage ? "max-w-[1000px] mx-auto" : ""}`}>
             <img
               src={image}
               alt=""
