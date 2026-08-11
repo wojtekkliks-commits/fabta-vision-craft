@@ -69,6 +69,7 @@ function Index() {
         <Projects />
         <Feature
           image={workCarpentry}
+          imageAspect="16/10"
           eyebrow="Stolarnia i tapicernia"
           title={
             <>
