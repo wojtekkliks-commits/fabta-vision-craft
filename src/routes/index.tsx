@@ -361,7 +361,10 @@ function Feature({
     <section id="co-robimy" className="py-20 md:py-28">
       <div className="mx-auto max-w-[1700px] px-6 md:px-12">
         <Reveal>
-          <div className={`relative overflow-hidden bg-muted aspect-[${imageAspect}]`}>
+          <div
+            className="relative overflow-hidden bg-muted"
+            style={{ aspectRatio: imageAspect }}
+          >
             <img
               src={image}
               alt=""
