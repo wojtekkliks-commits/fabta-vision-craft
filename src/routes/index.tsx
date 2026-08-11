@@ -361,7 +361,7 @@ function Feature({
     <section id="co-robimy" className="py-20 md:py-28">
       <div className="mx-auto max-w-[1700px] px-6 md:px-12">
         <Reveal>
-          <div className={`relative overflow-hidden aspect-[21/9] bg-muted ${narrowImage ? "max-w-[1200px] mx-auto" : ""}`}>
+          <div className={`relative overflow-hidden aspect-[21/9] bg-muted ${narrowImage ? "max-w-[1000px] mx-auto" : ""}`}>
             <img
               src={image}
               alt=""
