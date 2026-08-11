@@ -344,14 +344,14 @@ function Projects() {
 
 function Feature({
   image,
-  imageAspect = "21/9",
+  narrowImage,
   eyebrow,
   title,
   body,
   cta,
 }: {
   image: string;
-  imageAspect?: string;
+  narrowImage?: boolean;
   eyebrow: string;
   title: ReactNode;
   body: ReactNode;
@@ -361,10 +361,7 @@ function Feature({
     <section id="co-robimy" className="py-20 md:py-28">
       <div className="mx-auto max-w-[1700px] px-6 md:px-12">
         <Reveal>
-          <div
-            className="relative overflow-hidden bg-muted"
-            style={{ aspectRatio: imageAspect }}
-          >
+          <div className={`relative overflow-hidden aspect-[21/9] bg-muted ${narrowImage ? "max-w-[1200px] mx-auto" : ""}`}>
             <img
               src={image}
               alt=""
