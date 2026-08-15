@@ -97,28 +97,26 @@ function Index() {
               over quality and deadlines.
             </>
           }
-          cta={{ label: "Poznaj proces", href: "#proces" }}
+          cta={{ label: "EXPLORE OUR PROCESS", href: "#proces" }}
         />
         <Feature
           image={aboutImg}
           eyebrow="Doświadczenie w każdym projekcie"
           title={
             <>
-              <em className="italic">Robimy to, co lubimy</em>
+              <em className="italic">Doing what we love, loving what we do.</em>
             </>
           }
           body={
             <>
-              Zespół 15 osób, własna stolarnia, własna tapicernia, własne biuro
-              techniczne. Zależy nam, żeby nasze meble dobrze służyły i dobrze
-              wyglądały — i żeby klient był z nich naprawdę zadowolony.
-              <br />
-              <br />
-              To, co zrobiliśmy przez te lata, kształtuje sposób, w jaki podchodzimy
-              do każdego nowego projektu.
+              Behind our work is a team of 20 specialists, supported by our own
+              cutting, sewing, carpentry & upholstery departments, and technical
+              design office. Our focus is simple: we create furniture that
+              combines durability & ensuring complete client satisfaction. Years
+              of experience shape the way we approach every new project.
             </>
           }
-          cta={{ label: "O nas", href: "#o-nas" }}
+          cta={{ label: "ABOUT US", href: "#o-nas" }}
         />
         <Process />
         <ForWhom />
@@ -423,10 +421,10 @@ function Process() {
         <Reveal>
           <div className="text-center max-w-4xl mx-auto mb-16 md:mb-24">
             <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-8">
-              Jak pracujemy
+              OUR PROCESS
             </p>
             <h2 className="font-serif font-medium text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-[-0.02em]">
-              Od pomysłu do <em className="italic font-normal">gotowego mebla</em>
+              From <em className="italic font-normal">A to Z</em>
             </h2>
           </div>
         </Reveal>
@@ -522,8 +520,8 @@ function Contact() {
             id="o-nas"
             className="font-serif font-medium text-center text-[clamp(3rem,10vw,10rem)] leading-[0.95] tracking-[-0.03em]"
           >
-            <span className="block">Porozmawiajmy</span>
-            <span className="block italic font-normal">o Twoim projekcie</span>
+            <span className="block">Have a project in mind?</span>
+            <span className="block italic font-normal">Get in touch with our team.</span>
           </h2>
         </Reveal>
 
