@@ -210,8 +210,8 @@ function Hero() {
     >
       <div className="relative mx-auto max-w-[1700px] px-6 md:px-12 pt-20 md:pt-32 pb-20 md:pb-32 min-h-[80vh] flex flex-col justify-center">
         <h1 className="font-serif font-medium text-center leading-[0.95] text-[clamp(3.5rem,11vw,12rem)] tracking-[-0.03em]">
-          <span className="block">Meble, które</span>
-          <span className="block italic font-normal">robią różnicę</span>
+          <span className="block">upholstery furniture</span>
+          <span className="block italic font-normal">contract manufacturer</span>
         </h1>
 
         <div className="mt-16 md:mt-24 grid md:grid-cols-12 gap-8">
