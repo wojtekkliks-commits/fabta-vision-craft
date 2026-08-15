@@ -520,8 +520,8 @@ function Contact() {
             id="o-nas"
             className="font-serif font-medium text-center text-[clamp(3rem,10vw,10rem)] leading-[0.95] tracking-[-0.03em]"
           >
-            <span className="block">Porozmawiajmy</span>
-            <span className="block italic font-normal">o Twoim projekcie</span>
+            <span className="block">Have a project in mind?</span>
+            <span className="block italic font-normal">Get in touch with our team.</span>
           </h2>
         </Reveal>
 
