@@ -29,7 +29,7 @@
   --foreground: oklch(0.28 0.015 220);          /* deep slate */
   --bar: oklch(0.93 0.004 180);                 /* sticky header bar */
   --bar-foreground: oklch(0.32 0.015 220);
-  --accent: oklch(0.68 0.22 42);                /* vivid orange */
+  --accent: rgb(200, 5, 110);                  /* vivid purple (R:200 G:5 B:110) */
   --accent-foreground: oklch(0.98 0.005 85);    /* near-white */
   --muted: oklch(0.88 0.005 180);
   --muted-foreground: oklch(0.45 0.015 220);
