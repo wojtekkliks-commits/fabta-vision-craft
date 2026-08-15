@@ -104,21 +104,19 @@ function Index() {
           eyebrow="Doświadczenie w każdym projekcie"
           title={
             <>
-              <em className="italic">Robimy to, co lubimy</em>
+              <em className="italic">Doing what we love, loving what we do.</em>
             </>
           }
           body={
             <>
-              Zespół 15 osób, własna stolarnia, własna tapicernia, własne biuro
-              techniczne. Zależy nam, żeby nasze meble dobrze służyły i dobrze
-              wyglądały — i żeby klient był z nich naprawdę zadowolony.
-              <br />
-              <br />
-              To, co zrobiliśmy przez te lata, kształtuje sposób, w jaki podchodzimy
-              do każdego nowego projektu.
+              Behind our work is a team of 20 specialists, supported by our own
+              cutting, sewing, carpentry & upholstery departments, and technical
+              design office. Our focus is simple: we create furniture that
+              combines durability & ensuring complete client satisfaction. Years
+              of experience shape the way we approach every new project.
             </>
           }
-          cta={{ label: "O nas", href: "#o-nas" }}
+          cta={{ label: "ABOUT US", href: "#o-nas" }}
         />
         <Process />
         <ForWhom />
