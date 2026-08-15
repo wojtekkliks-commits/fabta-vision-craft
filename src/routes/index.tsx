@@ -73,7 +73,8 @@ function Index() {
           eyebrow="Stolarnia i tapicernia"
           title={
             <>
-              <em className="italic">Your partner in contract furniture manufacturing</em>
+              <span className="block">Your partner</span>
+              <span className="block italic font-normal">in contract furniture manufacturing</span>
             </>
           }
           body={
@@ -104,7 +105,8 @@ function Index() {
           eyebrow="Doświadczenie w każdym projekcie"
           title={
             <>
-              <em className="italic">Doing what we love, loving what we do.</em>
+              <span className="block">Doing what we love,</span>
+              <span className="block italic font-normal">loving what we do.</span>
             </>
           }
           body={
