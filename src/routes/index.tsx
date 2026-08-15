@@ -73,18 +73,28 @@ function Index() {
           eyebrow="Stolarnia i tapicernia"
           title={
             <>
-              <em className="italic">Pod jednym dachem</em>
+              <em className="italic">Your partner in contract furniture manufacturing</em>
             </>
           }
           body={
             <>
-              Od 2018 roku rozwijamy własną metodę pracy: wszystko, od stelaża po
-              ostatni szew, powstaje u nas w fabryce pod Lesznem. Dzięki temu mamy
-              pełną kontrolę nad jakością, terminem i kosztem każdej realizacji.
+              At fabta we don’t just manufacture furniture; we provide
+              comprehensive technical support to bring your vision to life. Our
+              expertise covers every stage of the process:
               <br />
               <br />
-              Realizujemy produkcję jednostkową, małoseryjną i seryjną — pod marką
-              klienta, z jego wizualizacji.
+              <strong>Technical Consulting:</strong> We help you select the best
+              technological solutions to balance design, durability, and
+              cost-effectiveness.
+              <br />
+              <strong>Documentation & CAD Design:</strong> Our team assists in
+              preparing precise technical documentation and detailed shop
+              drawings, ensuring every detail is engineered for perfection.
+              <br />
+              <strong>In-House Production:</strong> Once the technical details are
+              finalized, we manufacture your furniture in our own
+              state-of-the-art production facility, maintaining full control
+              over quality and deadlines.
             </>
           }
           cta={{ label: "Poznaj proces", href: "#proces" }}
