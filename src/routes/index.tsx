@@ -217,16 +217,12 @@ function Hero() {
         <div className="mt-16 md:mt-24 grid md:grid-cols-12 gap-8">
           <div className="md:col-start-7 md:col-span-6 max-w-xl">
             <p className="text-lg md:text-xl leading-relaxed">
-              Tworzymy meble, które wspierają ludzi w ich codziennej pracy. To
-              nasza obietnica i nasza siła — wytwarzać produkty, które łączą
-              komfort, jakość i ponadczasową formę.
+              We provide a seamless transition from your initial concept to the
+              final delivery, managing every step of the supply chain and
+              production process with precision.
             </p>
             <p className="text-base md:text-lg leading-relaxed mt-6 opacity-90">
-              Jako kontraktowy producent mebli tapicerowanych i biurowych
-              realizujemy gotowe produkty z wizualizacji klienta — pod jego marką,
-              od pojedynczych egzemplarzy po produkcję seryjną. Łączymy własną
-              tapicernię i stolarnię z otwartą współpracą z projektantami,
-              architektami i markami.
+              
             </p>
             <a
               href="#kontakt"
