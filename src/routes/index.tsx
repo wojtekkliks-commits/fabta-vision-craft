@@ -421,10 +421,10 @@ function Process() {
         <Reveal>
           <div className="text-center max-w-4xl mx-auto mb-16 md:mb-24">
             <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-8">
-              Jak pracujemy
+              OUR PROCESS
             </p>
             <h2 className="font-serif font-medium text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-[-0.02em]">
-              Od pomysłu do <em className="italic font-normal">gotowego mebla</em>
+              From <em className="italic font-normal">A to Z</em>
             </h2>
           </div>
         </Reveal>
