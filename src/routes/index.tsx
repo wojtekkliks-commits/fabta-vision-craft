@@ -70,10 +70,10 @@ function Index() {
         <Feature
           image={workCarpentry}
           narrowImage
-          eyebrow="Stolarnia i tapicernia"
+          eyebrow="ENGINEERING PURCHASING CUTTING SEWING CARPENTERING UPHOLSTERING DELIVERING"
           title={
             <>
-              <span className="block">Your partner</span>
+              <span className="block">your partner</span>
               <span className="block italic font-normal">in contract furniture manufacturing</span>
             </>
           }
@@ -105,8 +105,8 @@ function Index() {
           eyebrow="Doświadczenie w każdym projekcie"
           title={
             <>
-              <span className="block">Doing what we love,</span>
-              <span className="block italic font-normal">loving what we do.</span>
+              <span className="block">doing what we love</span>
+              <span className="block italic font-normal">loving what we do</span>
             </>
           }
           body={
@@ -426,7 +426,8 @@ function Process() {
               OUR PROCESS
             </p>
             <h2 className="font-serif font-medium text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-[-0.02em]">
-              From <em className="italic font-normal">A to Z</em>
+              bring your vision&nbsp;<br />
+              to life <em className="italic font-normal">con to Z</em>
             </h2>
           </div>
         </Reveal>
