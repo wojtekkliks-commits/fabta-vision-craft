@@ -97,7 +97,7 @@ function Index() {
               over quality and deadlines.
             </>
           }
-          cta={{ label: "Poznaj proces", href: "#proces" }}
+          cta={{ label: "EXPLORE OUR PROCESS", href: "#proces" }}
         />
         <Feature
           image={aboutImg}
