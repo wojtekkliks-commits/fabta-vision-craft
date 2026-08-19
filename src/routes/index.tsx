@@ -80,22 +80,18 @@ function Index() {
           body={
             <>
               At fabta we don’t just manufacture furniture; we provide
-              comprehensive technical support to bring your vision to life. Our
-              expertise covers every stage of the process:
+              comprehensive technical support to&nbsp;bring your vision to life.
+              Our expertise covers every stage of the process:
               <br />
               <br />
-              <strong>Technical Consulting:</strong> We help you select the best
-              technological solutions to balance design, durability, and
-              cost-effectiveness.
               <br />
-              <strong>Documentation & CAD Design:</strong> Our team assists in
-              preparing precise technical documentation and detailed shop
-              drawings, ensuring every detail is engineered for perfection.
               <br />
-              <strong>In-House Production:</strong> Once the technical details are
-              finalized, we manufacture your furniture in our own
-              state-of-the-art production facility, maintaining full control
-              over quality and deadlines.
+              We bridge the gap between design and manufacturing. Our team
+              supports you with technological optimization and professional
+              technical drawings, ensuring your contract furniture projects are
+              feasible and high-performing. With our own manufacturing plant, we
+              guarantee a smooth transition from technical planning to the final
+              upholstered product.
             </>
           }
           cta={{ label: "EXPLORE OUR PROCESS", href: "#proces" }}
@@ -410,10 +406,10 @@ function Feature({
 /* ---------- Process ---------- */
 
 const STEPS = [
-  { n: "01", t: "Wizualizacja, wymiary lub pomysł", d: "Wystarczy render, szkic, zdjęcie lub krótki opis. Od tego zaczynamy." },
-  { n: "02", t: "Konsultacja i propozycje", d: "Analizujemy projekt i proponujemy rozwiązania konstrukcyjne i materiałowe." },
-  { n: "03", t: "Realizacja", d: "Budujemy mebel u nas — stelaż, tapicerka, wykończenie. Wszystko w jednym miejscu." },
-  { n: "04", t: "Dostawa", d: "Jednostkowo, małoseryjnie lub seryjnie — pod marką klienta." },
+  { n: "01", t: "Visualization and idea", d: "All you need is render, sketch, visualization or description.  That's where we start." },
+  { n: "02", t: "Consultation and proposals", d: "We analize the idea and propose construction and material solutions." },
+  { n: "03", t: "Realization", d: "We build the furniture ourselves: frame,upholstery, finishing. All in one place." },
+  { n: "04", t: "Delivery", d: "Indyvidual, small-scale or serial production -  under the customer brand." },
 ];
 
 function Process() {
@@ -427,7 +423,7 @@ function Process() {
             </p>
             <h2 className="font-serif font-medium text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-[-0.02em]">
               bring your vision&nbsp;<br />
-              to life <em className="italic font-normal">con to Z</em>
+              to life <em className="italic font-normal">to life</em>
             </h2>
           </div>
         </Reveal>
