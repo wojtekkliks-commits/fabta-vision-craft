@@ -98,7 +98,7 @@ function Index() {
         />
         <Feature
           image={aboutImg}
-          eyebrow="Doświadczenie w każdym projekcie"
+          eyebrow="ABOUT"
           title={
             <>
               <span className="block">doing what we love</span>
@@ -422,8 +422,7 @@ function Process() {
               OUR PROCESS
             </p>
             <h2 className="font-serif font-medium text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-[-0.02em]">
-              bring your vision&nbsp;<br />
-              to life <em className="italic font-normal">to life</em>
+              bring your vision&nbsp;to life
             </h2>
           </div>
         </Reveal>
@@ -455,10 +454,10 @@ function ForWhom() {
         <Reveal>
           <div className="text-center max-w-4xl mx-auto mb-16 md:mb-20">
             <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-8">
-              Dla kogo pracujemy
+              WHO IS THIS FOR
             </p>
             <h2 className="font-serif font-medium text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-[-0.02em]">
-              Partner dla marek, <em className="italic font-normal">które nie produkują same</em>
+              Production partner,&nbsp; &nbsp; &nbsp;<em className="italic font-normal">for companies that do not manufacture</em>
             </h2>
           </div>
         </Reveal>
@@ -466,7 +465,7 @@ function ForWhom() {
         <div className="grid md:grid-cols-2 gap-12 md:gap-20 max-w-[1300px] mx-auto">
           <Reveal>
             <div className="border-t border-foreground/30 pt-8">
-              <h3 className="font-serif text-3xl md:text-4xl">Marki bez własnej produkcji</h3>
+              <h3 className="font-serif text-3xl md:text-4xl">for companies that do not manufacture</h3>
               <p className="mt-5 text-foreground/80 leading-relaxed">
                 Firmy z własnym brandem, które chcą zlecać wytwarzanie mebli na
                 zewnątrz i szukają rzetelnego, stabilnego dostawcy. Pracujemy w
