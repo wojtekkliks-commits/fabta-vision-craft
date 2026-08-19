@@ -132,12 +132,12 @@ function Index() {
 /* ---------- Header ---------- */
 
 const NAV = [
-  { href: "#co-robimy", label: "Co robimy" },
-  { href: "#realizacje", label: "Realizacje" },
-  { href: "#proces", label: "Proces" },
-  { href: "#dla-kogo", label: "Dla kogo" },
-  { href: "#o-nas", label: "O nas" },
-  { href: "#kontakt", label: "Kontakt" },
+  { href: "#co-robimy", label: "what we do" },
+  { href: "#realizacje", label: "realizations" },
+  { href: "#proces", label: "how we do" },
+  { href: "#dla-kogo", label: "who is this for" },
+  { href: "#o-nas", label: "about" },
+  { href: "#kontakt", label: "contact" },
 ];
 
 function Header() {
