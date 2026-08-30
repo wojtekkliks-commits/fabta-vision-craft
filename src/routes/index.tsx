@@ -130,6 +130,7 @@ const NAV = [
   { href: "#dla-kogo", label: "who is this for" },
   { href: "#realizacje", label: "realization" },
   { href: "#o-nas", label: "about" },
+  { href: "#kontakt", label: "contact" },
 ];
 
 function Header() {
@@ -511,10 +512,7 @@ function Contact() {
     <section id="kontakt" className="bg-accent text-accent-foreground py-24 md:py-40">
       <div className="mx-auto max-w-[1700px] px-6 md:px-12">
         <Reveal>
-          <h2
-            id="o-nas"
-            className="font-serif font-medium text-center text-[clamp(3rem,10vw,10rem)] leading-[0.95] tracking-[-0.03em]"
-          >
+          <h2 className="font-serif font-medium text-center text-[clamp(3rem,10vw,10rem)] leading-[0.95] tracking-[-0.03em]">
             <span className="block">Have a project in mind?</span>
             <span className="block italic font-normal">Get in touch with our team.</span>
           </h2>
