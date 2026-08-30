@@ -212,9 +212,6 @@ function Hero() {
       className="relative bg-background text-foreground overflow-hidden"
     >
       <div className="relative mx-auto max-w-[1700px] px-6 md:px-12 pt-20 md:pt-32 pb-20 md:pb-32 min-h-[80vh] flex flex-col justify-center">
-        <p className="text-center text-xs tracking-[0.3em] uppercase text-muted-foreground mb-8">
-          CONTRACT FURNITURE MANUFACTURER
-        </p>
         <div className="bg-accent text-accent-foreground py-10 md:py-16 -mx-6 md:-mx-12 px-6 md:px-12">
           <h1 className="font-serif font-medium text-center leading-[0.95] text-[clamp(3.5rem,11vw,12rem)] tracking-[-0.03em]">
             <span className="block">upholstery furniture,</span>
