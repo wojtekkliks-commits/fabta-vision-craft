@@ -4,12 +4,10 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import hero from "@/assets/hero.jpg";
 import detailFabric from "@/assets/detail-fabric.jpg";
 import workAcoustic from "@/assets/work-acoustic.jpg";
-import workCarpentry from "@/assets/work-carpentry.jpg";
 import projectPlanter from "@/assets/project-planter.jpg";
 import projectPoufs from "@/assets/project-poufs.jpg";
 import projectSofa from "@/assets/project-sofa.jpg";
 import projectScreens from "@/assets/project-screens.jpg";
-import aboutImg from "@/assets/about.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
