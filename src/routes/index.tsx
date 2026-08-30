@@ -363,17 +363,6 @@ function Feature({
   return (
     <section id="co-robimy" className="py-20 md:py-28">
       <div className="mx-auto max-w-[1700px] px-6 md:px-12">
-        <Reveal>
-          <div className={`relative overflow-hidden aspect-[21/9] bg-muted ${narrowImage ? "max-w-[1000px] mx-auto" : ""}`}>
-            <img
-              src={image}
-              alt=""
-              loading="lazy"
-              className="h-full w-full object-cover"
-            />
-          </div>
-        </Reveal>
-
         <Reveal delay={150}>
           <div className="grid md:grid-cols-12 gap-8 md:gap-12 mt-16 md:mt-24 max-w-[1300px] mx-auto">
             <div className="md:col-span-12 text-center">
