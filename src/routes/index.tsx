@@ -66,10 +66,8 @@ function Index() {
       <Header />
       <main>
         <Hero />
-        <Projects />
         <Feature
-          image={workCarpentry}
-          narrowImage
+          id="co-robimy"
           eyebrow="ENGINEERING PURCHASING CUTTING SEWING CARPENTERING UPHOLSTERING DELIVERING"
           title={
             <>
@@ -96,8 +94,11 @@ function Index() {
           }
           cta={{ label: "EXPLORE OUR PROCESS", href: "#proces" }}
         />
+        <Process />
+        <ForWhom />
+        <Projects />
         <Feature
-          image={aboutImg}
+          id="o-nas"
           eyebrow="ABOUT"
           title={
             <>
@@ -116,8 +117,6 @@ function Index() {
           }
           cta={{ label: "ABOUT US", href: "#o-nas" }}
         />
-        <Process />
-        <ForWhom />
         <Contact />
       </main>
       <Footer />
