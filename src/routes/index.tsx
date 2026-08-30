@@ -422,7 +422,7 @@ function Process() {
               OUR PROCESS
             </p>
             <h2 className="font-serif font-medium text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-[-0.02em]">
-              <span className="block">bring your vision</span>
+              <span className="block">bring your vision,</span>
               <span className="block italic font-normal">to life</span>
             </h2>
           </div>
