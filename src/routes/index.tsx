@@ -409,12 +409,14 @@ function Process() {
     <section id="proces" className="py-20 md:py-32 bg-[var(--bar)]">
       <div className="mx-auto max-w-[1700px] px-6 md:px-12">
         <Reveal>
-          <div className="text-center max-w-4xl mx-auto mb-16 md:mb-24">
-            <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-8">
-              OUR PROCESS
-            </p>
+          <div className="text-center mb-16 md:mb-24">
+            <div className="max-w-4xl mx-auto mb-8">
+              <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground">
+                OUR PROCESS
+              </p>
+            </div>
             <div className="bg-accent text-accent-foreground py-10 md:py-16 -mx-6 md:-mx-12 px-6 md:px-12">
-              <h2 className="font-serif font-medium text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-[-0.02em]">
+              <h2 className="max-w-4xl mx-auto font-serif font-medium text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-[-0.02em]">
                 <span className="block">bring your vision,</span>
                 <span className="block italic font-normal">to life</span>
               </h2>
@@ -447,12 +449,14 @@ function ForWhom() {
     <section id="dla-kogo" className="py-20 md:py-32 bg-background">
       <div className="mx-auto max-w-[1700px] px-6 md:px-12">
         <Reveal>
-          <div className="text-center max-w-4xl mx-auto mb-16 md:mb-20">
-            <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-8">
-              WHO IS THIS FOR
-            </p>
+          <div className="text-center mb-16 md:mb-20">
+            <div className="max-w-4xl mx-auto mb-8">
+              <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground">
+                WHO IS THIS FOR
+              </p>
+            </div>
             <div className="bg-accent text-accent-foreground py-10 md:py-16 -mx-6 md:-mx-12 px-6 md:px-12">
-              <h2 className="font-serif font-medium text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-[-0.02em]">
+              <h2 className="max-w-4xl mx-auto font-serif font-medium text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-[-0.02em]">
                 <span className="block">production partner,</span>
                 <span className="block italic font-normal">for companies that do not manufacture</span>
               </h2>
