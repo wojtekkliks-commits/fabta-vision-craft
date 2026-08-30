@@ -345,22 +345,20 @@ function Projects() {
 /* ---------- Reusable image + text feature (Senab "Vi synar sömmarna" pattern) ---------- */
 
 function Feature({
-  image,
-  narrowImage,
+  id,
   eyebrow,
   title,
   body,
   cta,
 }: {
-  image: string;
-  narrowImage?: boolean;
+  id?: string;
   eyebrow: string;
   title: ReactNode;
   body: ReactNode;
   cta?: { label: string; href: string };
 }) {
   return (
-    <section id="co-robimy" className="py-20 md:py-28">
+    <section id={id} className="py-20 md:py-28">
       <div className="mx-auto max-w-[1700px] px-6 md:px-12">
         <Reveal delay={150}>
           <div className="grid md:grid-cols-12 gap-8 md:gap-12 mt-16 md:mt-24 max-w-[1300px] mx-auto">
