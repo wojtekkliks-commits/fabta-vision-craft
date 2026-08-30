@@ -523,7 +523,8 @@ function Contact() {
 
           <Reveal delay={120}>
             <form
-              className="md:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-8"
+              className="md:col-span-12 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-8"
+
               onSubmit={(e) => {
                 e.preventDefault();
                 const f = e.currentTarget;
