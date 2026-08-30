@@ -369,9 +369,11 @@ function Feature({
               <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-8">
                 {eyebrow}
               </p>
-              <h2 className="font-serif font-medium text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.95] tracking-[-0.02em]">
-                {title}
-              </h2>
+              <div className="bg-accent text-accent-foreground py-10 md:py-16 -mx-6 md:-mx-12 px-6 md:px-12">
+                <h2 className="font-serif font-medium text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.95] tracking-[-0.02em]">
+                  {title}
+                </h2>
+              </div>
             </div>
             <div className="md:col-start-4 md:col-span-6 text-center md:text-left mt-6">
               <p className="text-lg leading-relaxed text-foreground/85">{body}</p>
@@ -411,10 +413,12 @@ function Process() {
             <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-8">
               OUR PROCESS
             </p>
-            <h2 className="font-serif font-medium text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-[-0.02em]">
-              <span className="block">bring your vision,</span>
-              <span className="block italic font-normal">to life</span>
-            </h2>
+            <div className="bg-accent text-accent-foreground py-10 md:py-16 -mx-6 md:-mx-12 px-6 md:px-12">
+              <h2 className="font-serif font-medium text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-[-0.02em]">
+                <span className="block">bring your vision,</span>
+                <span className="block italic font-normal">to life</span>
+              </h2>
+            </div>
           </div>
         </Reveal>
 
@@ -447,10 +451,12 @@ function ForWhom() {
             <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-8">
               WHO IS THIS FOR
             </p>
-            <h2 className="font-serif font-medium text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-[-0.02em]">
-              <span className="block">production partner,</span>
-              <span className="block italic font-normal">for companies that do not manufacture</span>
-            </h2>
+            <div className="bg-accent text-accent-foreground py-10 md:py-16 -mx-6 md:-mx-12 px-6 md:px-12">
+              <h2 className="font-serif font-medium text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-[-0.02em]">
+                <span className="block">production partner,</span>
+                <span className="block italic font-normal">for companies that do not manufacture</span>
+              </h2>
+            </div>
           </div>
         </Reveal>
 
