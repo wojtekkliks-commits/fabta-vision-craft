@@ -233,7 +233,7 @@ function Hero() {
               href="#kontakt"
               className="mt-10 inline-flex items-center group text-sm tracking-[0.25em] uppercase border-b border-accent-foreground pb-1"
             >
-              Porozmawiajmy
+              bring your vision to life
               <span className="ml-3 transition-transform group-hover:translate-x-1">→</span>
             </a>
           </div>
