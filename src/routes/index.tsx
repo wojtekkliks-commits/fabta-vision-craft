@@ -451,7 +451,7 @@ function ForWhom() {
                 WHO IS THIS FOR
               </p>
             </div>
-            <div className="bg-accent text-accent-foreground py-10 md:py-16 -mx-6 md:-mx-12 px-6 md:px-12">
+            <div className="bg-accent text-accent-foreground py-16 md:py-24 px-6 md:px-12">
               <h2 className="max-w-4xl mx-auto font-serif font-medium text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-[-0.02em]">
                 <span className="block">production partner,</span>
                 <span className="block italic font-normal">for companies that do not manufacture</span>
