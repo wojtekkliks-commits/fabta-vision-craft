@@ -211,13 +211,15 @@ function Hero() {
   return (
     <section
       id="top"
-      className="relative bg-accent text-accent-foreground overflow-hidden"
+      className="relative bg-background text-foreground overflow-hidden"
     >
       <div className="relative mx-auto max-w-[1700px] px-6 md:px-12 pt-20 md:pt-32 pb-20 md:pb-32 min-h-[80vh] flex flex-col justify-center">
-        <h1 className="font-serif font-medium text-center leading-[0.95] text-[clamp(3.5rem,11vw,12rem)] tracking-[-0.03em]">
-          <span className="block">upholstery furniture</span>
-          <span className="block italic font-normal">contract manufacturer</span>
-        </h1>
+        <div className="bg-accent text-accent-foreground py-10 md:py-16 -mx-6 md:-mx-12 px-6 md:px-12">
+          <h1 className="font-serif font-medium text-center leading-[0.95] text-[clamp(3.5rem,11vw,12rem)] tracking-[-0.03em]">
+            <span className="block">upholstery furniture</span>
+            <span className="block italic font-normal">contract manufacturer</span>
+          </h1>
+        </div>
 
         <div className="mt-16 md:mt-24 grid md:grid-cols-12 gap-8">
           <div className="md:col-start-7 md:col-span-6 max-w-xl">
@@ -231,7 +233,7 @@ function Hero() {
             </p>
             <a
               href="#kontakt"
-              className="mt-10 inline-flex items-center group text-sm tracking-[0.25em] uppercase border-b border-accent-foreground pb-1"
+              className="mt-10 inline-flex items-center group text-sm tracking-[0.25em] uppercase border-b border-foreground pb-1"
             >
               bring your vision to life
               <span className="ml-3 transition-transform group-hover:translate-x-1">→</span>
