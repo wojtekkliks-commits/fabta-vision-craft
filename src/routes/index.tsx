@@ -212,6 +212,9 @@ function Hero() {
       className="relative bg-background text-foreground overflow-hidden"
     >
       <div className="relative mx-auto max-w-[1700px] px-6 md:px-12 pt-20 md:pt-32 pb-20 md:pb-32 min-h-[80vh] flex flex-col justify-center">
+        <p className="text-center text-xs tracking-[0.3em] uppercase text-muted-foreground mb-8">
+          CONTRACT FURNITURE MANUFACTURER
+        </p>
         <div className="bg-accent text-accent-foreground py-10 md:py-16 -mx-6 md:-mx-12 px-6 md:px-12">
           <h1 className="font-serif font-medium text-center leading-[0.95] text-[clamp(3.5rem,11vw,12rem)] tracking-[-0.03em]">
             <span className="block">upholstery furniture,</span>
@@ -272,7 +275,7 @@ function Projects() {
     <section id="realizacje" className="bg-background py-20 md:py-28">
       <div className="px-6 md:px-12 mx-auto max-w-[1700px] flex items-end justify-between mb-10">
         <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground">
-          Wybrane realizacje
+          REALIZATION
         </p>
         <div className="flex items-center gap-4 text-sm tracking-[0.2em] uppercase">
           <button
@@ -512,6 +515,9 @@ function Contact() {
     <section id="kontakt" className="bg-accent text-accent-foreground py-24 md:py-40">
       <div className="mx-auto max-w-[1700px] px-6 md:px-12">
         <Reveal>
+          <p className="text-center text-xs tracking-[0.3em] uppercase opacity-80 mb-8">
+            CONTACT
+          </p>
           <h2 className="font-serif font-medium text-center text-[clamp(3rem,10vw,10rem)] leading-[0.95] tracking-[-0.03em]">
             <span className="block">Have a project in mind?</span>
             <span className="block italic font-normal">Get in touch with our team.</span>
