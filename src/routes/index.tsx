@@ -422,7 +422,8 @@ function Process() {
               OUR PROCESS
             </p>
             <h2 className="font-serif font-medium text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-[-0.02em]">
-              bring your vision&nbsp;to life
+              <span className="block">bring your vision</span>
+              <span className="block italic font-normal">to life</span>
             </h2>
           </div>
         </Reveal>
@@ -457,7 +458,8 @@ function ForWhom() {
               WHO IS THIS FOR
             </p>
             <h2 className="font-serif font-medium text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-[-0.02em]">
-              Production partner,&nbsp; &nbsp; &nbsp;<em className="italic font-normal">for companies that do not manufacture</em>
+              <span className="block">Production partner,</span>
+              <span className="block italic font-normal">for companies that do not manufacture</span>
             </h2>
           </div>
         </Reveal>
