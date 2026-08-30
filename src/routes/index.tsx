@@ -73,7 +73,7 @@ function Index() {
           eyebrow="ENGINEERING PURCHASING CUTTING SEWING CARPENTERING UPHOLSTERING DELIVERING"
           title={
             <>
-              <span className="block">your partner</span>
+              <span className="block">your partner,</span>
               <span className="block italic font-normal">in contract furniture manufacturing</span>
             </>
           }
@@ -101,7 +101,7 @@ function Index() {
           eyebrow="ABOUT"
           title={
             <>
-              <span className="block">doing what we love</span>
+              <span className="block">doing what we love,</span>
               <span className="block italic font-normal">loving what we do</span>
             </>
           }
@@ -448,7 +448,7 @@ function ForWhom() {
               WHO IS THIS FOR
             </p>
             <h2 className="font-serif font-medium text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-[-0.02em]">
-              <span className="block">Production partner,</span>
+              <span className="block">production partner,</span>
               <span className="block italic font-normal">for companies that do not manufacture</span>
             </h2>
           </div>
