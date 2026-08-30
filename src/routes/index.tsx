@@ -130,6 +130,7 @@ const NAV = [
   { href: "#dla-kogo", label: "who is this for" },
   { href: "#realizacje", label: "realization" },
   { href: "#o-nas", label: "about" },
+  { href: "#kontakt", label: "contact" },
 ];
 
 function Header() {
