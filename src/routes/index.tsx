@@ -519,26 +519,7 @@ function Contact() {
         </Reveal>
 
         <div className="mt-16 md:mt-24 grid md:grid-cols-12 gap-10 md:gap-16 max-w-[1300px] mx-auto">
-          <Reveal>
-            <div className="md:col-span-5">
-              <p className="text-xs tracking-[0.3em] uppercase opacity-80">Napisz</p>
-              <a
-                href="mailto:info@fabta.pl"
-                className="block mt-4 font-serif text-4xl md:text-5xl border-b border-accent-foreground/60 hover:border-accent-foreground pb-2"
-              >
-                info@fabta.pl
-              </a>
-              <p className="mt-10 text-base leading-relaxed opacity-90 max-w-sm">
-                Odpowiadamy zwykle w ciągu jednego dnia roboczego. Najlepiej dołącz
-                wizualizację, wymiary lub krótki opis projektu.
-              </p>
-              <div className="mt-10 text-sm space-y-1 opacity-90">
-                <p>FABTA · Fabryka Tapicerki</p>
-                <p>okolice Leszna, Wielkopolska</p>
-                <p>na rynku od 2018 · zespół 15 osób</p>
-              </div>
-            </div>
-          </Reveal>
+
 
           <Reveal delay={120}>
             <form
