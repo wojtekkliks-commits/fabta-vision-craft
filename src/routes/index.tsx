@@ -146,7 +146,8 @@ function Hero() {
               
             </p>
             <Link
-              to="/contact"
+              to="/"
+              hash="kontakt"
               className="mt-10 inline-flex items-center group text-sm tracking-[0.25em] uppercase border-b border-foreground pb-1"
             >
               Have a project in mind?

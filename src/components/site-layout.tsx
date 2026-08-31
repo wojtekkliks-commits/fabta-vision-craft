@@ -7,7 +7,7 @@ export const NAV = [
   { to: "/", hash: "dla-kogo", label: "who is this for" },
   { to: "/", hash: "realizacje", label: "realization" },
   { to: "/", hash: "o-nas", label: "about" },
-  { to: "/contact", label: "contact" },
+  { to: "/", hash: "kontakt", label: "contact" },
 ] as const;
 
 export function Header() {
