@@ -61,65 +61,61 @@ function Reveal({ children, delay = 0 }: { children: ReactNode; delay?: number }
 
 function Index() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <Header />
-      <main>
-        <Hero />
-        <Feature
-          id="co-robimy"
-          eyebrow="ENGINEERING PURCHASING CUTTING SEWING CARPENTERING UPHOLSTERING DELIVERING"
-          title={
-            <>
-              <span className="block">your partner,</span>
-              <span className="block italic font-normal">in contract furniture manufacturing</span>
-            </>
-          }
-          body={
-            <>
-              At fabta we don’t just manufacture furniture; we provide
-              comprehensive technical support to&nbsp;bring your vision to life.
-              Our expertise covers every stage of the process:
-              <br />
-              <br />
-              <br />
-              <br />
-              We bridge the gap between design and manufacturing. Our team
-              supports you with technological optimization and professional
-              technical drawings, ensuring your contract furniture projects are
-              feasible and high-performing. With our own manufacturing plant, we
-              guarantee a smooth transition from technical planning to the final
-              upholstered product.
-            </>
-          }
-          cta={{ label: "EXPLORE OUR PROCESS", href: "#proces" }}
-        />
-        <Process />
-        <ForWhom />
-        <Projects />
-        <Feature
-          id="o-nas"
-          eyebrow="ABOUT"
-          title={
-            <>
-              <span className="block">doing what we love,</span>
-              <span className="block italic font-normal">loving what we do</span>
-            </>
-          }
-          body={
-            <>
-              Behind our work is a team of 20 specialists, supported by our own
-              cutting, sewing, carpentry & upholstery departments, and technical
-              design office. Our focus is simple: we create furniture that
-              combines durability & ensuring complete client satisfaction. Years
-              of experience shape the way we approach every new project.
-            </>
-          }
-          cta={{ label: "ABOUT US", href: "#o-nas" }}
-        />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <main>
+      <Hero />
+      <Feature
+        id="co-robimy"
+        eyebrow="ENGINEERING PURCHASING CUTTING SEWING CARPENTERING UPHOLSTERING DELIVERING"
+        title={
+          <>
+            <span className="block">your partner,</span>
+            <span className="block italic font-normal">in contract furniture manufacturing</span>
+          </>
+        }
+        body={
+          <>
+            At fabta we don’t just manufacture furniture; we provide
+            comprehensive technical support to&nbsp;bring your vision to life.
+            Our expertise covers every stage of the process:
+            <br />
+            <br />
+            <br />
+            <br />
+            We bridge the gap between design and manufacturing. Our team
+            supports you with technological optimization and professional
+            technical drawings, ensuring your contract furniture projects are
+            feasible and high-performing. With our own manufacturing plant, we
+            guarantee a smooth transition from technical planning to the final
+            upholstered product.
+          </>
+        }
+        cta={{ label: "EXPLORE OUR PROCESS", href: "#proces" }}
+      />
+      <Process />
+      <ForWhom />
+      <Projects />
+      <Feature
+        id="o-nas"
+        eyebrow="ABOUT"
+        title={
+          <>
+            <span className="block">doing what we love,</span>
+            <span className="block italic font-normal">loving what we do</span>
+          </>
+        }
+        body={
+          <>
+            Behind our work is a team of 20 specialists, supported by our own
+            cutting, sewing, carpentry & upholstery departments, and technical
+            design office. Our focus is simple: we create furniture that
+            combines durability & ensuring complete client satisfaction. Years
+            of experience shape the way we approach every new project.
+          </>
+        }
+        cta={{ label: "ABOUT US", href: "#o-nas" }}
+      />
+      <ContactSection />
+    </main>
   );
 }
 
