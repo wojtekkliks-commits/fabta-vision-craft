@@ -14,7 +14,7 @@ function ContactField({
   className?: string;
 }) {
   const base =
-    "w-full bg-transparent border-b border-accent-foreground/40 focus:border-accent-foreground outline-none py-3 text-accent-foreground placeholder:text-accent-foreground/50 transition-colors";
+    "w-full bg-transparent border-b border-foreground/40 focus:border-foreground outline-none py-3 text-foreground placeholder:text-foreground/50 transition-colors";
   return (
     <label className={`block ${className}`}>
       <span className="text-xs uppercase tracking-[0.25em] opacity-80">
@@ -32,12 +32,16 @@ function ContactField({
 
 export function ContactSection() {
   return (
-    <section id="kontakt" className="bg-accent text-accent-foreground py-24 md:py-40">
+    <section id="kontakt" className="bg-background text-foreground py-20 md:py-28">
       <div className="mx-auto max-w-[1700px] px-6 md:px-12">
-        <h2 className="font-serif font-medium text-center text-[clamp(3rem,10vw,10rem)] leading-[0.95] tracking-[-0.03em]">
-          <span className="block">Have a project in mind?</span>
-          <span className="block italic font-normal">Get in touch with our team.</span>
-        </h2>
+        <div className="text-center">
+          <div className="bg-accent text-accent-foreground py-10 md:py-16 -mx-6 md:-mx-12 px-6 md:px-12">
+            <h2 className="font-serif font-medium text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.95] tracking-[-0.02em]">
+              <span className="block">Have a project in mind?</span>
+              <span className="block italic font-normal">Get in touch with our team.</span>
+            </h2>
+          </div>
+        </div>
 
         <div className="mt-16 md:mt-24 max-w-[1300px] mx-auto">
           <form
@@ -60,7 +64,7 @@ export function ContactSection() {
               <p className="text-xs opacity-80">Wizualizację możesz dosłać mailem.</p>
               <button
                 type="submit"
-                className="inline-flex items-center text-sm uppercase tracking-[0.2em] border border-accent-foreground px-6 py-3 hover:bg-accent-foreground hover:text-accent transition-colors"
+                className="inline-flex items-center text-sm uppercase tracking-[0.2em] border border-foreground px-6 py-3 hover:bg-foreground hover:text-background transition-colors"
               >
                 Wyślij zapytanie →
               </button>
