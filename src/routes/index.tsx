@@ -145,13 +145,13 @@ function Hero() {
             <p className="text-base md:text-lg leading-relaxed mt-6 opacity-90">
               
             </p>
-            <a
-              href="#kontakt"
+            <Link
+              to="/contact"
               className="mt-10 inline-flex items-center group text-sm tracking-[0.25em] uppercase border-b border-foreground pb-1"
             >
-              bring your vision to life
+              Have a project in mind?
               <span className="ml-3 transition-transform group-hover:translate-x-1">→</span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
