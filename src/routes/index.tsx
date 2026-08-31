@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
 import hero from "@/assets/hero.jpg";
@@ -8,6 +8,7 @@ import projectPlanter from "@/assets/project-planter.jpg";
 import projectPoufs from "@/assets/project-poufs.jpg";
 import projectSofa from "@/assets/project-sofa.jpg";
 import projectScreens from "@/assets/project-screens.jpg";
+import { ContactSection } from "@/components/contact-section";
 
 export const Route = createFileRoute("/")({
   head: () => ({
