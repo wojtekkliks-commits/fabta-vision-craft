@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
 import hero from "@/assets/hero.jpg";
@@ -8,6 +8,7 @@ import projectPlanter from "@/assets/project-planter.jpg";
 import projectPoufs from "@/assets/project-poufs.jpg";
 import projectSofa from "@/assets/project-sofa.jpg";
 import projectScreens from "@/assets/project-screens.jpg";
+import { ContactSection } from "@/components/contact-section";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -60,146 +61,61 @@ function Reveal({ children, delay = 0 }: { children: ReactNode; delay?: number }
 
 function Index() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <Header />
-      <main>
-        <Hero />
-        <Feature
-          id="co-robimy"
-          eyebrow="ENGINEERING PURCHASING CUTTING SEWING CARPENTERING UPHOLSTERING DELIVERING"
-          title={
-            <>
-              <span className="block">your partner,</span>
-              <span className="block italic font-normal">in contract furniture manufacturing</span>
-            </>
-          }
-          body={
-            <>
-              At fabta we don’t just manufacture furniture; we provide
-              comprehensive technical support to&nbsp;bring your vision to life.
-              Our expertise covers every stage of the process:
-              <br />
-              <br />
-              <br />
-              <br />
-              We bridge the gap between design and manufacturing. Our team
-              supports you with technological optimization and professional
-              technical drawings, ensuring your contract furniture projects are
-              feasible and high-performing. With our own manufacturing plant, we
-              guarantee a smooth transition from technical planning to the final
-              upholstered product.
-            </>
-          }
-          cta={{ label: "EXPLORE OUR PROCESS", href: "#proces" }}
-        />
-        <Process />
-        <ForWhom />
-        <Projects />
-        <Feature
-          id="o-nas"
-          eyebrow="ABOUT"
-          title={
-            <>
-              <span className="block">doing what we love,</span>
-              <span className="block italic font-normal">loving what we do</span>
-            </>
-          }
-          body={
-            <>
-              Behind our work is a team of 20 specialists, supported by our own
-              cutting, sewing, carpentry & upholstery departments, and technical
-              design office. Our focus is simple: we create furniture that
-              combines durability & ensuring complete client satisfaction. Years
-              of experience shape the way we approach every new project.
-            </>
-          }
-          cta={{ label: "ABOUT US", href: "#o-nas" }}
-        />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
-  );
-}
-
-/* ---------- Header ---------- */
-
-const NAV = [
-  { href: "#co-robimy", label: "what we do" },
-  { href: "#proces", label: "how we do" },
-  { href: "#dla-kogo", label: "who is this for" },
-  { href: "#realizacje", label: "realization" },
-  { href: "#o-nas", label: "about" },
-  { href: "#kontakt", label: "contact" },
-];
-
-function Header() {
-  const [open, setOpen] = useState(false);
-  return (
-    <>
-      <header className="sticky top-0 z-50 bg-[var(--bar)] text-[var(--bar-foreground)]">
-        <div className="relative h-28 md:h-36 flex items-center justify-center px-6">
-          {/* Orange round search button */}
-          <button
-            aria-label="Szukaj"
-            className="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 size-12 md:size-14 rounded-full bg-accent text-accent-foreground grid place-items-center hover:scale-105 transition-transform"
-          >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
-              <circle cx="11" cy="11" r="7" />
-              <line x1="20" y1="20" x2="16.5" y2="16.5" />
-            </svg>
-          </button>
-
-          {/* Centered wordmark */}
-          <a
-            href="#top"
-            className="font-serif text-3xl md:text-5xl tracking-[0.18em] font-medium select-none"
-          >
-            FABTA
-          </a>
-
-          {/* Hamburger */}
-          <button
-            aria-label="Menu"
-            onClick={() => setOpen((o) => !o)}
-            className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 size-12 grid place-items-center"
-          >
-            <span className="flex flex-col gap-[5px]">
-              <span className="block w-7 h-px bg-current" />
-              <span className="block w-7 h-px bg-current" />
-              <span className="block w-7 h-px bg-current" />
-            </span>
-          </button>
-        </div>
-      </header>
-
-      {/* Slide-down menu */}
-      <div
-        className={`fixed inset-x-0 top-28 md:top-36 z-40 bg-[var(--bar)] border-t border-border overflow-hidden transition-[max-height] duration-500 ${
-          open ? "max-h-[80vh]" : "max-h-0"
-        }`}
-      >
-        <nav className="px-6 md:px-12 py-10 md:py-16 max-w-[1600px] mx-auto">
-          <ul className="space-y-5 md:space-y-7">
-            {NAV.map((n) => (
-              <li key={n.href}>
-                <a
-                  href={n.href}
-                  onClick={() => setOpen(false)}
-                  className="font-serif text-4xl md:text-7xl leading-none hover:text-accent transition-colors block"
-                >
-                  {n.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-          <div className="mt-12 flex gap-6 text-xs tracking-[0.25em] uppercase text-muted-foreground">
-            <span className="border-b border-current pb-1">PL</span>
-            <span>info@fabta.pl</span>
-          </div>
-        </nav>
-      </div>
-    </>
+    <main>
+      <Hero />
+      <Feature
+        id="co-robimy"
+        eyebrow="ENGINEERING PURCHASING CUTTING SEWING CARPENTERING UPHOLSTERING DELIVERING"
+        title={
+          <>
+            <span className="block">your partner,</span>
+            <span className="block italic font-normal">in contract furniture manufacturing</span>
+          </>
+        }
+        body={
+          <>
+            At fabta we don’t just manufacture furniture; we provide
+            comprehensive technical support to&nbsp;bring your vision to life.
+            Our expertise covers every stage of the process:
+            <br />
+            <br />
+            <br />
+            <br />
+            We bridge the gap between design and manufacturing. Our team
+            supports you with technological optimization and professional
+            technical drawings, ensuring your contract furniture projects are
+            feasible and high-performing. With our own manufacturing plant, we
+            guarantee a smooth transition from technical planning to the final
+            upholstered product.
+          </>
+        }
+        cta={{ label: "EXPLORE OUR PROCESS", href: "#proces" }}
+      />
+      <Process />
+      <ForWhom />
+      <Projects />
+      <Feature
+        id="o-nas"
+        eyebrow="ABOUT"
+        title={
+          <>
+            <span className="block">doing what we love,</span>
+            <span className="block italic font-normal">loving what we do</span>
+          </>
+        }
+        body={
+          <>
+            Behind our work is a team of 20 specialists, supported by our own
+            cutting, sewing, carpentry & upholstery departments, and technical
+            design office. Our focus is simple: we create furniture that
+            combines durability & ensuring complete client satisfaction. Years
+            of experience shape the way we approach every new project.
+          </>
+        }
+        cta={{ label: "ABOUT US", href: "#o-nas" }}
+      />
+      <ContactSection />
+    </main>
   );
 }
 
@@ -229,13 +145,13 @@ function Hero() {
             <p className="text-base md:text-lg leading-relaxed mt-6 opacity-90">
               
             </p>
-            <a
-              href="#kontakt"
+            <Link
+              to="/contact"
               className="mt-10 inline-flex items-center group text-sm tracking-[0.25em] uppercase border-b border-foreground pb-1"
             >
-              bring your vision to life
+              Have a project in mind?
               <span className="ml-3 transition-transform group-hover:translate-x-1">→</span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -505,118 +421,3 @@ function ForWhom() {
   );
 }
 
-/* ---------- Contact ---------- */
-
-function Contact() {
-  return (
-    <section id="kontakt" className="bg-accent text-accent-foreground py-24 md:py-40">
-      <div className="mx-auto max-w-[1700px] px-6 md:px-12">
-        <Reveal>
-          <h2 className="font-serif font-medium text-center text-[clamp(3rem,10vw,10rem)] leading-[0.95] tracking-[-0.03em]">
-            <span className="block">Have a project in mind?</span>
-            <span className="block italic font-normal">Get in touch with our team.</span>
-          </h2>
-        </Reveal>
-
-        <div className="mt-16 md:mt-24 grid md:grid-cols-12 gap-10 md:gap-16 max-w-[1300px] mx-auto">
-
-
-          <Reveal delay={120}>
-            <form
-              className="md:col-span-12 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-8"
-
-              onSubmit={(e) => {
-                e.preventDefault();
-                const f = e.currentTarget;
-                const data = new FormData(f);
-                const body = `Imię: ${data.get("name")}\nFirma: ${data.get(
-                  "company",
-                )}\n\n${data.get("message")}`;
-                window.location.href = `mailto:info@fabta.pl?subject=Zapytanie%20ofertowe&body=${encodeURIComponent(body)}`;
-              }}
-            >
-              <ContactField name="name" label="Imię" required />
-              <ContactField name="company" label="Firma" />
-              <ContactField name="email" label="E-mail" type="email" required className="sm:col-span-2" />
-              <ContactField name="message" label="Opis projektu" textarea required className="sm:col-span-2" />
-              <div className="sm:col-span-2 flex items-center justify-between pt-2">
-                <p className="text-xs opacity-80">Wizualizację możesz dosłać mailem.</p>
-                <button
-                  type="submit"
-                  className="inline-flex items-center text-sm uppercase tracking-[0.2em] border border-accent-foreground px-6 py-3 hover:bg-accent-foreground hover:text-accent transition-colors"
-                >
-                  Wyślij zapytanie →
-                </button>
-              </div>
-            </form>
-          </Reveal>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function ContactField({
-  name,
-  label,
-  type = "text",
-  required,
-  textarea,
-  className = "",
-}: {
-  name: string;
-  label: string;
-  type?: string;
-  required?: boolean;
-  textarea?: boolean;
-  className?: string;
-}) {
-  const base =
-    "w-full bg-transparent border-b border-accent-foreground/40 focus:border-accent-foreground outline-none py-3 text-accent-foreground placeholder:text-accent-foreground/50 transition-colors";
-  return (
-    <label className={`block ${className}`}>
-      <span className="text-xs uppercase tracking-[0.25em] opacity-80">
-        {label}
-        {required && " *"}
-      </span>
-      {textarea ? (
-        <textarea name={name} required={required} rows={4} className={`${base} resize-none`} />
-      ) : (
-        <input name={name} type={type} required={required} className={base} />
-      )}
-    </label>
-  );
-}
-
-/* ---------- Footer ---------- */
-
-function Footer() {
-  return (
-    <footer className="bg-[var(--bar)] py-16 md:py-20">
-      <div className="mx-auto max-w-[1700px] px-6 md:px-12 grid md:grid-cols-12 gap-8 items-end">
-        <div className="md:col-span-4">
-          <p className="font-serif text-3xl tracking-[0.18em]">FABTA</p>
-          <p className="text-xs text-muted-foreground mt-3">
-            Fabryka Tapicerki · od 2018
-          </p>
-        </div>
-        <div className="md:col-span-4 text-sm text-foreground/75 space-y-1">
-          <a href="mailto:info@fabta.pl" className="hover:text-foreground block">
-            info@fabta.pl
-          </a>
-          <p>okolice Leszna, Wielkopolska</p>
-        </div>
-        <nav className="md:col-span-4 flex flex-wrap md:justify-end gap-x-6 gap-y-2 text-sm text-foreground/75">
-          {NAV.map((n) => (
-            <a key={n.href} href={n.href} className="hover:text-foreground">
-              {n.label}
-            </a>
-          ))}
-        </nav>
-        <p className="md:col-span-12 text-xs text-muted-foreground pt-10 border-t border-border">
-          © {new Date().getFullYear()} FABTA. Wszelkie prawa zastrzeżone.
-        </p>
-      </div>
-    </footer>
-  );
-}
